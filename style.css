@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #222;
+    background-color: #f4f5f9;
+}
+
+/* Header using Flexbox */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px 5%;
+    background-color: white;
+}
+
+.logo {
+    color: #ed5835;
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: #222;
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    color: #ed5835;
+}
+
+.order-button,
+.explore-button {
+    display: inline-block;
+    padding: 10px 16px;
+    color: white;
+    background-color: #ed5835;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.hero {
+    padding: 65px 20px;
+    text-align: center;
+    background-color: #ffede7;
+}
+
+.hero h1 {
+    font-size: 34px;
+}
+
+.categories,
+.restaurants {
+    padding: 30px 5%;
+}
+
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.category-list span {
+    padding: 14px 25px;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    container-type: inline-size;
+}
+
+.restaurant-card {
+    padding: 15px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 14px #00000018;
+}
+
+.food-image {
+    display: grid;
+    place-items: center;
+    min-height: 105px;
+    border-radius: 8px;
+    font-size: 38px;
+}
+
+.pizza { background-color: #ffe0d2; }
+.burger { background-color: #fff0c9; }
+.noodles { background-color: #f9dfdc; }
+.salad { background-color: #e0f1df; }
+.biryani { background-color: #f5e8cd; }
+.dessert { background-color: #f3e0f2; }
+
+footer {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    background-color: #303030;
+}
+
+/* Tablet layout */
+@media (max-width: 900px) {
+    .restaurant-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .site-header {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .main-nav {
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 50px 15px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .restaurant-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Container query for narrow restaurant grid */
+@container (max-width: 450px) {
+    .food-image {
+        min-height: 90px;
+    }
+}
